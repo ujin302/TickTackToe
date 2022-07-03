@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- name="viewport": 뷰포트 선언 
+        content="width=device-width: 콘텐츠를 표현할 넓이 (디바이스 크기에 맞추겠다고 선언)
+        initial-scale=1.0: 초기 크기 설정(기본 꽉찬 화면) -->
+        <link href="master.css" rel="stylesheet"/>
+        <script src='GameManager.js'></script>
+        <script src='maptile.js'></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+        <title>Final Exam</title>
+    </head>
+    <body>
+
+        <!-- 게임 시작 화면 -->
+        <div id ="title" v-if="show"> 
+            <h1>Tic Tac Toe 시작!</h1>
+            <!-- <div v-else>No</div> -->
+            <button id="startBtn" @click="Start_Show">시작</button>
+        </div>
+
+        <div id="TTT_app">
+            
+            <!-- 게임 상태 -->
+            <div id="gameinfo">    
+                <game-message/>
+            </div>
+
+            <!-- 게임 9개의 타일 생성 -->
+            <!-- <div id="game-map" v-if="GameOver() === true"> -->
+            <div id="game-map">
+                <div v-for = "(maptile, i) in Map"
+                    v-on:click = "oxinput"
+                    v-bind:class="{highlighted: maptile.isHighlighted}"
+                    class="game-tile">
+                    {{maptile.value}}
+                </div>
+            </div>
+            
+            <!-- 게임 오버 -->
+            <div id="Over" v-if="GameOver() === false"> 
+                <!-- v-if="GameOver() === false" 가 되면 게임판 사라지고 나타내기 -->
+                <h1>Game Over!!</h1>
+                <button @click="Reset">게임 다시 하기!</button>
+            </div>
+            
+        </div>
+
+        <script src='start.js'></script>
+        <script src = "main.js"></script>
+    </body>
+</html>

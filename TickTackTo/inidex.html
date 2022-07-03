@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Tic Tac Toe_Ujin</title>
+        <link rel="stylesheet" href="master.css">
+    </head>
+
+    <body>
+        <div id="gameView">
+            <div id="gameView_Info">
+                {{infoMessage}}
+            </div>
+
+            <div id="gameView_Squares">
+                <div
+                v-for="(square, i) in squares"
+                v-on:click="activeGame.makeMove(i)"
+                v-bind:class="{highlighted: square.isHighlighted}"
+                class="gameView_Square">
+
+                {{square.value}}
+
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="Game.js"></script>
+        <script src="Square.js"></script>
+        <script type="text/javascript">
+            let activeGame = new Game();
+
+            let gameVue = new Vue({
+                el: '#gameView',
+                data: activeGame,
+                computed: {
+                    infoMessage: function() {
+                        if(this.inProgress) {
+                            return this.currentTurn + '\'s 턴!!';
+                        }
+                        if(this.winner){
+                            return this.winner + ' 승자!!!!';
+                        }
+                        if (!this.winner && !this.inProgress) { // 승자가 없고 게임이 끝났을 때
+                            return'무승부!!';                            
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
