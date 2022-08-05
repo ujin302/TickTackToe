@@ -1,4 +1,8 @@
-#TTT_app {
+#All {
+    width: 500px;
+    margin: 0 auto;
+}
+#TTT_app, #title {
     width: 500px;
     border : 1px solid #000;
 }
@@ -30,10 +34,20 @@
     width: 100%;
     height: 85%;
     font-size: 100px;
-    font-family: cursive;
+    font-family: "paybooc-Light", sans-serif;
     background-color: rgb(230, 129, 159);
 }
 
+#reBtn{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    font-family: "paybooc-Light", sans-serif;
+    background-color: rgb(49, 111, 172);
+    border: none;
+    border-radius: 12px;
+}
 
 #gameinfo {
     padding: 15px;
@@ -71,9 +85,10 @@
     -moz-user-select: none;
 }
 
-.game-tile.highlighted {color : green;}
+.game-tile.highlighted {color :  rgb(212, 92, 112);}
 .game-tile:hover {background-color: #eee;}
 
-.game-tile:nth-child(-n+6) {border-bottom: 15px solid brown;}
+.game-tile:nth-child(-n+6) {border-bottom: 15px solid rgb(49, 111, 172);}
 .game-tile:nth-child(3n+1),
-.game-tile:nth-child(3n+2) {border-right: 15px solid brown;}
+.game-tile:nth-child(3n+2) {border-right: 15px solid rgb(49, 111, 172);}
+#reBtn:hover {background-color: rgb(83, 130, 176);}

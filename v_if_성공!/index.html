@@ -15,39 +15,42 @@
     </head>
     <body>
 
-        <!-- 게임 시작 화면 -->
-        <div id ="title" v-if="show"> 
-            <h1>Tic Tac Toe 시작!</h1>
-            <!-- <div v-else>No</div> -->
-            <button id="startBtn" @click="Start_Show">시작</button>
-        </div>
-
-        <div id="TTT_app">
-            
-            <!-- 게임 상태 -->
-            <div id="gameinfo">    
-                <game-message/>
+        <div id="All">
+                    <!-- 게임 시작 화면 -->
+            <div id ="title" v-if="show"> 
+                <h1>Tic Tac Toe 시작!</h1>
+                <!-- <div v-else>No</div> -->
+                <button id="startBtn" @click="Start_Show">시작</button>
             </div>
 
-            <!-- 게임 9개의 타일 생성 -->
-            <!-- <div id="game-map" v-if="GameOver() === true"> -->
-            <div id="game-map">
-                <div v-for = "(maptile, i) in Map"
-                    v-on:click = "oxinput"
-                    v-bind:class="{highlighted: maptile.isHighlighted}"
-                    class="game-tile">
-                    {{maptile.value}}
+            <div id="TTT_app">
+            
+                <!-- 게임 상태 -->
+                <div id="gameinfo">    
+                    <game-message/>
                 </div>
-            </div>
+
+                <!-- 게임 9개의 타일 생성 -->
+                <!-- <div id="game-map" v-if="GameOver() === true"> -->
+                <div id="game-map">
+                    <div v-for = "(maptile, i) in Map"
+                        v-on:click = "oxinput"
+                        v-bind:class="{highlighted: maptile.isHighlighted}"
+                        class="game-tile">
+                        {{maptile.value}}
+                    </div>
+                </div>
             
-            <!-- 게임 오버 -->
-            <div id="Over" v-if="GameOver() === false"> 
-                <!-- v-if="GameOver() === false" 가 되면 게임판 사라지고 나타내기 -->
-                <h1>Game Over!!</h1>
-                <button @click="Reset">게임 다시 하기!</button>
-            </div>
+                <!-- 게임 오버 -->
+                <div id="Over" v-if="GameOver() === false"> 
+                    <!-- v-if="GameOver() === false" 가 되면 게임판 사라지고 나타내기 -->
+                    <h1>Game Over!!</h1>
+                    <button id="reBtn" @click="Reset">게임 다시 하기!</button>
+                </div>
             
+            </div>
         </div>
+
 
         <script src='start.js'></script>
         <script src = "main.js"></script>
