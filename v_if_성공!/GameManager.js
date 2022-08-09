@@ -1,11 +1,12 @@
 class GameManager {
     constructor() {
-        this.GameState = 0;
+        this.GameState = 5;
         // 0 게임 오버 - 무승부 
         // 1 게임 오버 - o 승리 
         // 2 게임 오버 - x 승리 
         // 3 게임 플레이중 - o 턴 
         // 4 게임 플레이중 - x 턴 
+        // 5 게임 시작! 
 
         this.inProgress = true; // 게임 진행 여부
         this.winner = null; // 승자 여부
@@ -16,7 +17,7 @@ class GameManager {
     
     Init() // 초기화
     {
-        this.GameState = 0; // 무승부 
+        this.GameState = 5; // 게임시작
         this.inProgress = true; // 다시 활성화
         this.movesMode = 0; 
         this.winner = null; 

@@ -13,6 +13,7 @@ var gamemessage = {
             else if(gms.GameState === 2){ return  "게임오버! - X 승리"; }
             else if(gms.GameState === 3){ return  "O 턴"; }
             else if(gms.GameState === 4){ return  "X 턴"; }
+            else if(gms.GameState === 5){ return  "게임 시작!"; }
         }
     }
 }
