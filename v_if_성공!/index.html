@@ -18,10 +18,7 @@
         <div id="All">
                     <!-- 게임 시작 화면 -->
             <div id ="title" v-if="show"> 
-                <!-- <h1>Tic Tac Toe</h1> -->
-                <!-- <div v-else>No</div> -->
                 <img src="./IMG/2TTT.png" alt="" id ="title_IMG">
-                <!-- <img src="./IMG/TTT2.png" alt="" id ="title_IMG" > -->
                 <button id="startBtn" @click="Start_Show"> Game Start!</button>
             </div>
 
@@ -33,7 +30,6 @@
                 </div>
 
                 <!-- 게임 9개의 타일 생성 -->
-                <!-- <div id="game-map" v-if="GameOver() === true"> -->
                 <div id="game-map">
                     <div v-for = "(maptile, i) in Map"
                         v-on:click = "oxinput"
